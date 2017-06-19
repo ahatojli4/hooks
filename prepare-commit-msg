@@ -1,6 +1,5 @@
 #!/bin/sh
 
-REALPATH="$(readlink $0)"
-DIR="${REALPATH%/*}"
+DIR=$(git rev-parse --show-toplevel)
 
-. "$DIR/format-commit-msg.sh"
+. "$DIR/hooks/format-commit-msg.sh"
