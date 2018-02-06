@@ -2,4 +2,4 @@
 
 DIR=$(git rev-parse --show-toplevel)
 
-. "$DIR/hooks/format-commit-msg.sh"
+. "$DIR/../../../personal/hooks/format-commit-msg.sh"
