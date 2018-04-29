@@ -4,9 +4,9 @@
 # to the beginning of the line. Result is:
 # <branch_name>: <commit_msg>#
 
-#BRANCH_NAME=$(git symbolic-ref --short HEAD)
-# BRANCH_NAME=$(git symbolic-ref --short HEAD | rev | cut -d'_' -f1 | rev)
-BRANCH_NAME=$(git symbolic-ref --short HEAD | sed 's/.*[\-_]\([A-Za-z]*-[0-9]*\)$/\1/')
+# BRANCH_NAME=$(git symbolic-ref --short HEAD)
+BRANCH_NAME=$(git symbolic-ref --short HEAD | rev | cut -d'_' -f1 | rev)
+# BRANCH_NAME=$(git symbolic-ref --short HEAD | sed 's/.*[\-_]\([A-Za-z]*-[0-9]*\)$/\1/')
 COMMIT_MSG=$(head -n 1 $1)
 
 if [ -n "$BRANCH_NAME" ] &&
